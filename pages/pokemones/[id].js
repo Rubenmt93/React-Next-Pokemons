@@ -1,7 +1,16 @@
+import Image from "next/image"
+import Link from "next/link"
+
+
 const Pokemon = ({data}) => {
     console.log(data)
     return (
-        <p>lala</p>
+        <div>
+            <h1>{data.name} numero #{data.id}</h1>
+            <Image src={data.sprites.front_default} alt= {data.name} width={400} height={400}></Image>
+            <Link href={'/'}>Volver</Link>            
+        </div>
+        
     )
 }
 export default Pokemon
