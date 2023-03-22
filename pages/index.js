@@ -1,8 +1,14 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Pokemon = ({pokemon}) => {
+ const id = pokemon.url.split('/').filter(x=>x).pop();
   return (
-    <li>{pokemon.name}</li>
+    <li>
+    <Link href={`pokemones/${id}`}>
+        {pokemon.name}
+      </Link>
+    </li>
   )
 }
 
